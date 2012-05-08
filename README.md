@@ -1,5 +1,7 @@
 # Smiling
 
+[![Build Status](http://travis-ci.org/qnyp/smiling.png)](http://travis-ci.org/qnyp/smiling)
+
 API wrapper for Nico Nico Douga.
 
 ## Installation
