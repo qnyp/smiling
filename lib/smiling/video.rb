@@ -1,7 +1,7 @@
 require 'time'
 
 module Smiling
-  # Public: Video Represents a video of Nico Nico Douga.
+  # Public: Video represents a video of Nico Nico Douga.
   class Video
     attr_reader :id
     attr_reader :title
@@ -47,10 +47,3 @@ module Smiling
     end
   end
 end
-
-
-
-
-
-
-
