@@ -1,4 +1,3 @@
-#!/usr/bin/env rake
 require 'bundler/gem_tasks'
 
 #############################################################################
@@ -36,6 +35,7 @@ RDoc::Task.new do |rdoc|
   rdoc.title = "#{name} #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
+  rdoc.markup = 'tomdoc'
 end
 
 desc 'Open an irb session preloaded with this library'
