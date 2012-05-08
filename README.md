@@ -1,6 +1,6 @@
 # Smiling
 
-API wrapper for Niconico video.
+API wrapper for Nico Nico Douga.
 
 ## Installation
 
@@ -18,7 +18,18 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Fetch video information via getthumbinfo API.
+
+    video = Smiling.video('sm9')
+    puts video.title
+
+    video.tags['jp'] do |tag|
+      # tag is an instance of Smiling::Video
+      print tag.value
+      puts ' (lock)' if tag.locked?
+    end
+
+See also: [Nico Nico Douga API](http://dic.nicovideo.jp/a/%E3%83%8B%E3%82%B3%E3%83%8B%E3%82%B3%E5%8B%95%E7%94%BBapi)
 
 ## Contributing
 
