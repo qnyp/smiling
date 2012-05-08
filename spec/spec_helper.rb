@@ -1,7 +1,9 @@
 $:.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
 require 'rspec'
-require File.expand_path('../lib/smiling', __FILE__)
+require 'webmock/rspec'
+
+require 'smiling'
 
 RSpec.configure do |config|
 end
