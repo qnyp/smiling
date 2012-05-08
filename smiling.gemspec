@@ -14,4 +14,6 @@ Gem::Specification.new do |gem|
   gem.name          = "smiling"
   gem.require_paths = ["lib"]
   gem.version       = Smiling::VERSION
+
+  gem.add_development_dependency 'rspec', '~> 2.10.0'
 end
