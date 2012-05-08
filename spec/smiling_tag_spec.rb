@@ -2,7 +2,6 @@
 require 'spec_helper'
 
 describe Smiling::Tag do
-
   context 'tag is not locked' do
     let(:tag) { Smiling::Tag.new(value: 'Foo') }
     subject { tag }
@@ -15,5 +14,4 @@ describe Smiling::Tag do
     subject { tag }
     it { should be_locked }
   end
-
 end
