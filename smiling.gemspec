@@ -23,6 +23,5 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency 'nokogiri', '~> 1.5.0'
   gem.add_dependency 'httparty', '~> 0.8.0'
+  gem.add_dependency('jruby-openssl') if RUBY_PLATFORM == 'java'
 end
-
-
