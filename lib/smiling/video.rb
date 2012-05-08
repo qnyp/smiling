@@ -20,30 +20,43 @@ module Smiling
     attr_reader :type
     attr_reader :embeddable
     attr_reader :no_live_play
+    attr_reader :tags
     attr_reader :user_id
 
     # Public: Create an instance of Video.
     #
-    # hash - The hash parameters contains response of getthumbinfo API.
-    def initialize(hash)
-      @id = hash['nicovideo_thumb_response']['thumb']['video_id']
-      @title = hash['nicovideo_thumb_response']['thumb']['title']
-      @description = hash['nicovideo_thumb_response']['thumb']['description']
-      @thumbnail_url = hash['nicovideo_thumb_response']['thumb']['thumbnail_url']
-      @first_retrieve = Time.parse(hash['nicovideo_thumb_response']['thumb']['first_retrieve'])
-      @length = hash['nicovideo_thumb_response']['thumb']['length']
-      @movie_type = hash['nicovideo_thumb_response']['thumb']['movie_type']
-      @size_high = hash['nicovideo_thumb_response']['thumb']['size_high'].to_i
-      @size_low = hash['nicovideo_thumb_response']['thumb']['size_low'].to_i
-      @view_counter = hash['nicovideo_thumb_response']['thumb']['view_counter'].to_i
-      @comment_num = hash['nicovideo_thumb_response']['thumb']['comment_num'].to_i
-      @mylist_counter = hash['nicovideo_thumb_response']['thumb']['mylist_counter'].to_i
-      @last_res_body = hash['nicovideo_thumb_response']['thumb']['last_res_body']
-      @watch_url = hash['nicovideo_thumb_response']['thumb']['watch_url']
-      @type = hash['nicovideo_thumb_response']['thumb']['thumb_type']
-      @embeddable = hash['nicovideo_thumb_response']['thumb']['embeddable']
-      @no_live_play = hash['nicovideo_thumb_response']['thumb']['no_live_play']
-      @user_id = hash['nicovideo_thumb_response']['thumb']['user_id'].to_i
+    # doc - The Nokogiri::XML::Document contains response of getthumbinfo API.
+    def initialize(doc)
+      thumb = doc.xpath('nicovideo_thumb_response/thumb')
+      @id = thumb.xpath('video_id').text
+      @title = thumb.xpath('title').text
+      @description = thumb.xpath('description').text
+      @thumbnail_url = thumb.xpath('thumbnail_url').text
+      @first_retrieve = Time.parse(thumb.xpath('first_retrieve').text)
+      @length = thumb.xpath('length').text
+      @movie_type = thumb.xpath('movie_type').text
+      @size_high = thumb.xpath('size_high').text.to_i
+      @size_low = thumb.xpath('size_low').text.to_i
+      @view_counter = thumb.xpath('view_counter').text.to_i
+      @comment_num = thumb.xpath('comment_num').text.to_i
+      @mylist_counter = thumb.xpath('mylist_counter').text.to_i
+      @last_res_body = thumb.xpath('last_res_body').text
+      @watch_url = thumb.xpath('watch_url').text
+      @type = thumb.xpath('thumb_type').text
+      @embeddable = thumb.xpath('embeddable').text
+      @no_live_play = thumb.xpath('no_live_play').text
+
+      @tags = {}
+      thumb.xpath('tags').each do |tags|
+        domain = tags['domain']
+        @tags[domain] = []
+        tags.xpath('tag').each do |tag|
+          lock = tag['lock'] == '1' ? true : false
+          @tags[domain] << Tag.new(value: tag.text, lock: lock)
+        end
+      end
+
+      @user_id = thumb.xpath('user_id').text.to_i
     end
   end
 end

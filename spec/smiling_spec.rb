@@ -57,6 +57,23 @@ describe Smiling do
     its(:type) { should eq('video') }
     its(:embeddable) { should eq('1') }
     its(:no_live_play) { should eq('0') }
+    describe 'tags' do
+      subject { Smiling.video(video_id).tags }
+      it { should be_kind_of(Hash) }
+      it { should have(2).tags }
+      its(:keys) { should include('jp') }
+      its(:keys) { should include('tw') }
+      describe "tags['jp']" do
+        subject { Smiling.video(video_id).tags['jp'] }
+        it { should have(9).tag_objects }
+        its(:first) { should be_kind_of(Smiling::Tag) }
+      end
+      describe "tags['tw']" do
+        subject { Smiling.video(video_id).tags['tw'] }
+        it { should have(4).tag_objects }
+        its(:first) { should be_kind_of(Smiling::Tag) }
+      end
+    end
     describe 'user_id' do
       subject { Smiling.video(video_id).user_id }
       it { should be_kind_of(Integer) }

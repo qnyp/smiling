@@ -1,4 +1,5 @@
 require 'httparty'
+require 'nokogiri'
 
 # Public: Utility methods useful for fetching information from Nico Nico Douga.
 # All methods are module methods and should be called on the Smiling module.
@@ -13,6 +14,7 @@ module Smiling
   autoload :VERSION, 'smiling/version'
 
   include HTTParty
+  parser(Proc.new { |body| Nokogiri::XML(body) })
   base_uri 'ext.nicovideo.jp'
 
   # Public: Get video information with getthumbinfo API.
