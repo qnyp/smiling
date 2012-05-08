@@ -4,9 +4,9 @@ require File.expand_path('../lib/smiling/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Junya Ogura"]
   gem.email         = ["junyaogura@gmail.com"]
-  gem.description   = %q{API wrapper for Niconico video}
-  gem.summary       = %q{API wrapper for Niconico video}
-  gem.homepage      = ""
+  gem.description   = %q{API wrapper for Nico Nico Douga (experimental)}
+  gem.summary       = %q{API wrapper for Nico Nico Douga}
+  gem.homepage      = "https://github.com/qnyp/smiling"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
