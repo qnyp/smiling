@@ -8,6 +8,7 @@ require 'httparty'
 #   Smiling.video('sm9')
 #   # => #<Smiling::Video:0x007fd24bb62d88 @id="sm9">
 module Smiling
+  autoload :Tag, 'smiling/tag'
   autoload :Video, 'smiling/video'
   autoload :VERSION, 'smiling/version'
 
