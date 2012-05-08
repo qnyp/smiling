@@ -1,10 +1,25 @@
 # SPEC
 
-## getthumbinfo
+## thumb
 
-```
-require 'smiling'
+work in progress.
 
-video = Smiling.video('sm9')
-puts video.id
-```
+## getflv
+
+work in progress.
+
+## getmarquee
+
+work in progress.
+
+## getrelation
+
+work in progress.
+
+## msg
+
+work in progress.
+
+## rss
+
+work in progress.
