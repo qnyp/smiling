@@ -30,18 +30,5 @@ module Smiling
     def locked?
       @lock
     end
-
-    # Public: Returns the String represents tag.
-    #
-    # Examples
-    #
-    #   tag = Tag.new(value: 'Foo')
-    #   tag.to_s
-    #   # => "Foo"
-    #
-    # Returns the String.
-    def to_s
-      @value
-    end
   end
 end

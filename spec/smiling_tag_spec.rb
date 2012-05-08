@@ -8,7 +8,6 @@ describe Smiling::Tag do
     subject { tag }
     it { should_not be_locked }
     its(:value) { should eq('Foo') }
-    its(:to_s) { should eq('Foo') }
   end
 
   context 'tag is locked' do
