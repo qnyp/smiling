@@ -30,12 +30,12 @@ RSpec::Core::RakeTask.new(:spec) do |t|
 end
 
 require 'rdoc/task'
-RDoc::Task.new do |rdoc|
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "#{name} #{version}"
-  rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-  rdoc.markup = 'tomdoc'
+RDoc::Task.new do |t|
+  t.rdoc_dir = 'rdoc'
+  t.title = "#{name} #{version}"
+  t.rdoc_files.include('README*')
+  t.rdoc_files.include('lib/**/*.rb')
+  t.markup = 'tomdoc'
 end
 
 desc 'Open an irb session preloaded with this library'
