@@ -15,6 +15,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Smiling::VERSION
 
+  gem.add_development_dependency 'coveralls', '~> 0.6.4'
   gem.add_development_dependency 'rake', '~> 10.0.4'
   gem.add_development_dependency 'rdoc', '~> 4.0.1'
   gem.add_development_dependency 'rspec', '~> 2.13.0'

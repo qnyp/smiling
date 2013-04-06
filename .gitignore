@@ -2,6 +2,7 @@
 *.rbc
 .bundle
 .config
+.coveralls.yml
 .rbenv-version
 .yardoc
 Gemfile.lock
