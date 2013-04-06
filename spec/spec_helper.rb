@@ -12,6 +12,9 @@ require 'webmock/rspec'
 require 'smiling'
 
 RSpec.configure do |config|
+  config.expect_with :rspec do |c|
+    c.syntax = :expect  # disables `should`
+  end
 end
 
 # Public: Returns the String of specified file contents.
