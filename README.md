@@ -1,6 +1,7 @@
 # Smiling
 
-[![Build Status](http://travis-ci.org/qnyp/smiling.png)](http://travis-ci.org/qnyp/smiling)
+[![Build Status](https://travis-ci.org/qnyp/smiling.png?branch=master)](https://travis-ci.org/qnyp/smiling)
+[![Coverage Status](https://coveralls.io/repos/qnyp/smiling/badge.png?branch=master)](https://coveralls.io/r/qnyp/smiling)
 
 API wrapper for Nico Nico Douga.
 
