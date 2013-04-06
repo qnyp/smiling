@@ -2,7 +2,7 @@
 require File.expand_path('../lib/smiling/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.authors       = ["Junya Ogura"]
+  gem.authors       = ["Junya Ogura", "QNYP, LLC."]
   gem.email         = ["junyaogura@gmail.com"]
   gem.description   = %q{API wrapper for Nico Nico Douga (experimental)}
   gem.summary       = %q{API wrapper for Nico Nico Douga}
