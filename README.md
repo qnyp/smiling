@@ -4,6 +4,11 @@
 
 API wrapper for Nico Nico Douga.
 
+## Prerequisite
+
+* Ruby 1.9.3
+* Ruby 2.0.0-p0
+
 ## Installation
 
 Add this line to your application's Gemfile:
