@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/qnyp/smiling.png?branch=master)](https://travis-ci.org/qnyp/smiling)
 [![Coverage Status](https://coveralls.io/repos/qnyp/smiling/badge.png?branch=master)](https://coveralls.io/r/qnyp/smiling)
 [![Code Climate](https://codeclimate.com/github/qnyp/smiling.png)](https://codeclimate.com/github/qnyp/smiling)
+[![Documentation Status](http://inch-ci.org/github/qnyp/smiling.png?branch=master)](http://inch-ci.org/github/qnyp/smiling)
 
 API wrapper for Nico Nico Douga.
 
